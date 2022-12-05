@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+#        postgres:
+#                image: postgres:14.1
+#                container_name: postgres
+#                volumes:
+#                        - /var/lib/pgsql/14/data/:/var/lib/pgsql/data
+#                ports:
+#                        - "5432:5432"
+#                environment:
+#                        POSTGRES_PASSWORD: '123'
+#                        TZ: Asia/Shanghai
+#                        PGDATA: /var/lib/pgsql/data
+#                restart: always
+
+        api:
+                image: flask_ch:1.0.0
+                container_name: api
+                volumes:
+                        - ./bak_code:/opt/flask
+                ports:
+                        - "18080:18080"
+                environment:
+                        TZ: Asia/Shanghai
+                        PYTHONIOENCODING: "utf-8"
+                restart: always
